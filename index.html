@@ -526,7 +526,7 @@
               <summary>Screen Glitch / Freeze?</summary>
               <div class="acc-body">
                 Power-cycle the device (OFF → 5 s → ON). If the issue persists, flash
-                <strong>v1.0.4-prod</strong> — it contains the display driver patch
+                <strong>v1.0.5-HotFix</strong> — it contains the display driver patch
                 that resolves the framebuffer glitch regression.
               </div>
             </details>
@@ -604,14 +604,14 @@
 
   // ── Constants ─────────────────────────────────────────────────────────────
 
-  const GITHUB_BASE = 'https://mynamzray.github.io/BX09-project/BX09/firmware';
+  const FIRMWARE_BASE = new URL('.', window.location.href).pathname.replace(/\/$/, '');
 
   const BOOT_LOGS = [
     '> ╔══════════════════════════════════════════╗',
     '> ║  BX.DISPLAY // FIRMWARE FLASH PORTAL    ║',
     '> ╚══════════════════════════════════════════╝',
     '> Target   : ESP32-S3  (BX.Display Batch 01)',
-    '> Endpoint : mynamzray.github.io/BX09-project',
+    `> Endpoint : ${window.location.host}${FIRMWARE_BASE || '/'}`,
     '> Protocol : USB-C / UART @ 115200 baud',
     '> Toolchain: esptool.py v4.7.0',
     '>',
@@ -648,8 +648,12 @@
 
   // ── Helpers ───────────────────────────────────────────────────────────────
 
+  function getFirmwareUrl(path) {
+    return `${FIRMWARE_BASE}/${path}`;
+  }
+
   function getManifestUrl(value) {
-    return value ? `${GITHUB_BASE}/${value}/manifest.json` : '';
+    return value ? getFirmwareUrl(`${value}/manifest.json`) : '';
   }
 
   /** Maps a terminal log line to an inline CSS color string. */
@@ -835,8 +839,10 @@
 
 async function loadFirmwareRegistry() {
   try {
-    // Fetch the master list from your GitHub Pages root
-    const response = await fetch(`${GITHUB_BASE}/versions.json`);
+    const response = await fetch(getFirmwareUrl('versions.json'));
+    if (!response.ok) {
+      throw new Error(`Failed to load firmware registry: HTTP ${response.status}`);
+    }
     const versions = await response.json();
 
     // Clear the "Loading..." text

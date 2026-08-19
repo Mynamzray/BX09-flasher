@@ -1,14 +1,10 @@
 [
     {
-    "folder": "V1.0.6-Update",
-    "label": "[LATEST] V1.0.6-HotFix — Upadte"
+    "folder": "v1.0.6-Update",
+    "label": "[LATEST] v1.0.6-Update"
   },
   {
-    "folder": "V1.0.5-HotFix",
+    "folder": "v1.0.5-HotFix",
     "label": "[LATEST] V1.0.5-HotFix — Screen Glitch Patch"
-  },
-  {
-    "folder": "v1.0.4-prod",
-    "label": "[STABLE] v1.0.4-prod"
   }
 ]

@@ -1,6 +1,6 @@
 {
   "name": "BX.Display Firmware",
-  "version": "v1.0.4-prod",
+  "version": "v1.0.5-HotFix",
   "new_install_prompt_erase": true,
   "builds": [
     {
