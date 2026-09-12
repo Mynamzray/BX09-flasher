@@ -1,14 +1,18 @@
 [
   {
+    "folder": "v1.1.1-Update",
+    "label": "[LATEST] v1.1.1-Update"
+  },
+  {
     "folder": "v1.0.7-Update",
-    "label": "[LATEST] v1.0.7-Update"
+    "label": " v1.0.7-Update"
   },
     {
     "folder": "v1.0.6-Update",
-    "label": "[LATEST] v1.0.6-Update"
+    "label": " v1.0.6-Update"
   },
   {
     "folder": "v1.0.5-HotFix",
-    "label": "[LATEST] V1.0.5-HotFix — Screen Glitch Patch"
+    "label": " V1.0.5-HotFix — Screen Glitch Patch"
   }
 ]

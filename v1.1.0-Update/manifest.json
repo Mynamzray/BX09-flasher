@@ -1,0 +1,15 @@
+{
+  "name": "BX.Display Firmware",
+  "version": "v1.1.0-Update",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        { "path": "BX09.ino.bootloader.bin", "offset": 0 },
+        { "path": "BX09.ino.partitions.bin", "offset": 32768 },
+        { "path": "BX09.ino.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}
