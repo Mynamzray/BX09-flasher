@@ -1,6 +1,6 @@
 {
   "name": "BX.Display Firmware",
-  "version": "v1.1.3-Optimised",
+  "version": "v1.1.3-optimised",
   "new_install_prompt_erase": true,
   "builds": [
     {
